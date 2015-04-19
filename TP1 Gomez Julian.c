@@ -29,14 +29,13 @@ main ()
 doc=fopen("prueba.txt", "w");
 	
 printf ("\n Tabla que convierte de Grados Celsius a Grados Faharenheit.\n\n");
+printf("\n Celius    Fahrenheit \n");
 for(c=0;c<=300;c+=20)
 {
 f=(((c)*1.8)+32);
-printf("\n  %d Grados Celsius es igual a%7.2f Grados Faharenheit.\n",c,f);
-fprintf(doc,"\n  %d Grados Celsius es igual a%7.2f Grados Faharenheit.\n",c,f);
+printf("\n   %3d      %6.0f\n",c,f);
+fprintf(doc,"\n   %3d      %6.0f\n",c,f);
 getch();
 }
 fclose(doc);
 }
-
-
