@@ -1,41 +1,52 @@
-/* 0          32
-   20          68
-   40         104
-   60         140
-   80         176
-  100         212
-  120         248
-  140         284
-  160         320  
-  180         356
-  200         392
-  220         428
-  240         464
-  260         500
-  280         536
-  300         572
+/*  Celsius:	Fahrenheit:
+      -20		      4.00
+         0                    32.00                                                                                                                                                
+       20                    68.00                                                                                                                                                
+       40                  104.00                                                                                                                                                
+       60                  140.00                                                                                                                                                
+       80                  176.00                                                                                                                                                
+     100                  212.00                                                                                                                                                
+     120                  248.00                                                                                                                                                
+     140                  284.00                                                                                                                                                
+     160                  320.00                                                                                                                                                
+     180                  356.00                                                                                                                                                
+     200                  392.00                                                                                                                                                
+     220                  428.00                                                                                                                                                
+     240                  464.00                                                                                                                                                
+     260                  500.00                                                                                                                                                
+     280                  536.00                                                                                                                                                
+     300                  572.00      
   Julian Gomez 153.605-9
-  20150419
+  20160224
 */
 
 #include <stdio.h>
-#include <conio.h>
-int c;
-double f;
-FILE* doc;
 
-main ()
-{
-doc=fopen("prueba.txt", "w");
-	
-printf ("\n Tabla que convierte de Grados Celsius a Grados Faharenheit.\n\n");
-printf("\n Celius    Fahrenheit \n");
-for(c=0;c<=300;c+=20)
-{
-f=(((c)*1.8)+32);
-printf("\n   %3d      %6.0f\n",c,f);
-fprintf(doc,"\n   %3d      %6.0f\n",c,f);
-getch();
+#include <stdlib.h> 
+
+
+
+int main(void){
+float fah, celsius;
+ 
+int lower, upper, step;
+lower = -20;  
+upper = 300;
+  
+step = 20;
+
+
+celsius = lower;
+
+printf ("\t   Celsius:\t\t  Fahrenheit:\n");
+
+while (celsius <= upper){
+     fah = (celsius*9/5)+32;         
+     printf ("%16.f %25.2f\n" , celsius , fah);
+
+     celsius = celsius + step;
 }
-fclose(doc);
+
+return 0;
+
 }
